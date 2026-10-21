@@ -1,0 +1,46 @@
+{
+  "name": "github-review-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for GitHub code review: review queue, guided reviews backed by coding practices, and a review panel for posting comments",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && tsc -p ui && esbuild ui/review.ts --bundle --format=esm --minify --log-level=warning --outfile=dist/ui/review.js",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "inspect": "npx @modelcontextprotocol/inspector node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoflanKing/github-review-mcp.git"
+  },
+  "keywords": [
+    "mcp",
+    "github",
+    "code-review",
+    "claude"
+  ],
+  "author": "RoflanKing",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/RoflanKing/github-review-mcp/issues"
+  },
+  "homepage": "https://github.com/RoflanKing/github-review-mcp#readme",
+  "bin": {
+    "github-review-mcp": "dist/index.js"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/ext-apps": "1.7.5",
+    "@modelcontextprotocol/sdk": "^1.32.1",
+    "@octokit/rest": "^22.0.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "esbuild": "0.25.10",
+    "typescript": "^5.9.3"
+  }
+}
